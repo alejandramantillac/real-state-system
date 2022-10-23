@@ -65,15 +65,15 @@ public class Building {
     }
     
     /**
-     * addApartment
-     * @param pos
-     * @param aIdNumber
-     * @param aTotalRooms
-     * @param aTotalBaths
-     * @param aBalcony
-     * @param aRentValue
-     * @param aPlace
-     * @return msg
+     * addApartment add a new apartment to the building.
+     * @param pos represents the position.
+     * @param aIdNumber represents the apartment id number.
+     * @param aTotalRooms represents the apartment total rooms.
+     * @param aTotalBaths represents the apartment total baths.
+     * @param aBalcony represents the apartment balcony option.
+     * @param aRentValue represents the apartment rent value.
+     * @param aPlace represents the name of the building to which the apartment belongs.
+     * @return msg represents the response.
      */
     public String addApartment(int pos, String aIdNumber, int aTotalRooms, int aTotalBaths, boolean aBalcony, double aRentValue, String aPlace) {
         String msg = "";
@@ -92,9 +92,9 @@ public class Building {
     }
     
     /**
-     * checkApartmentNumberAvailability
-     * @param aIdNumber
-     * @return isAvailable
+     * checkApartmentNumberAvailability check if an apartment id number is available.
+     * @param aIdNumber represents the id number of an apartment.
+     * @return isAvailable represents the response of an apartment id number availability.
      */
     public boolean checkApartmentNumberAvailability(String aIdNumber) {
         boolean isAvailable = true;
@@ -109,8 +109,8 @@ public class Building {
     }
     
     /**
-     * showAvailableApartmentsToSet
-     * @return msg_apartments
+     * showAvailableApartmentsToSet show the available apartments to set.
+     * @return msg_apartments represents the list.
      */
     public String showAvailableApartmentsToSet() {
         String msg_apartments = "";
@@ -125,8 +125,8 @@ public class Building {
     }
     
     /**
-     * showAvailableApartmentsToRent
-     * @return msg_apartments
+     * showAvailableApartmentsToRent show the available apartments to rent.
+     * @return msg_apartments represents the list.
      */
     public String showAvailableApartmentsToRent() {
         String msg_apartments = "";
@@ -141,9 +141,9 @@ public class Building {
     }
     
     /**
-     * getApartmentPosToSet
-     * @param aIdNumber
-     * @return pos
+     * getApartmentPosToSet get the position of the apartment to set.
+     * @param aIdNumber represents the apartment's id number.
+     * @return pos represents the position.
      */
     public int getApartmentPosToSet(String aIdNumber) {
         int pos = -1;
@@ -158,26 +158,26 @@ public class Building {
     }
     
     /**
-     * setApartmentAvailabilityWithPosition
-     * @param pos
+     * setApartmentAvailabilityWithPosition set the apartment availability.
+     * @param pos represents the apartment position.
      */
     public void setApartmentAvailabilityWithPosition(int pos) {
         theApartments.get(pos).setAvailability(false);
     }
     
     /**
-     * setApartmentRentedWithPosition
-     * @param pos
+     * setApartmentRentedWithPosition set the apartment rented availability.
+     * @param pos represents the apartment position.
      */    
     public void setApartmentRentedWithPosition(int pos) {
         theApartments.get(pos).setIsRented(true);
     }
     
     /**
-     * countAvailableApartmentsToSet
-     * @param bName
-     * @return count
-     */
+     * countAvailableApartmentsToSet count all the available apartment to set.
+     * @param bName represents the name of the building.
+     * @return count represents the total apartments.
+     */ 
     public int countAvailableApartmentsToSet(String bName) {
         int count = 0;
         
@@ -192,9 +192,9 @@ public class Building {
     }
     
     /**
-     * countAvailableApartmentsToRent
-     * @param bName
-     * @return count
+     * countAvailableApartmentsToRent count all the available apartment to rent.
+     * @param bName represents the name of the building.
+     * @return count count represents the total apartments.
      */
     public int countAvailableApartmentsToRent(String bName) {
         int count = 0;
@@ -211,9 +211,9 @@ public class Building {
     }
     
     /**
-     * calculateMonthlyValueRentedApartments
-     * @param bName
-     * @return totalMoney
+     * calculateMonthlyValueRentedApartments get the total amount of all the rented apartments.
+     * @param bName represents the name of the building.
+     * @return totalMoney represents the amount.
      */
     public double calculateMonthlyValueRentedApartments(String bName) {
         double totalMoney = 0;
@@ -229,9 +229,9 @@ public class Building {
     }
     
     /**
-     * checkApartmentAvailability
-     * @param aIdNumber
-     * @return isAvailable
+     * checkApartmentAvailability check if an apartment is available.
+     * @param aIdNumber represents the apartment id number.
+     * @return isAvailable represents the response.
      */
     public boolean checkApartmentAvailability(String aIdNumber) {
         boolean isAvailable = false;
@@ -246,10 +246,10 @@ public class Building {
     }
     
     /**
-     * sumValueOfRentsOwner
-     * @param pos
-     * @param current
-     * @return sumRents
+     * sumValueOfRentsOwner sum the rent concepts of all the apartments of an owner.
+     * @param pos represents the owner position.
+     * @param current represents the owner current total rents.
+     * @return sumRents represents the total value of rents.
      */
     public double sumValueOfRentsOwner(int pos, double current) {
         double currentValue = theApartments.get(pos).getRentValue();

@@ -29,10 +29,10 @@ public class Controller {
     }
 
     /**
-     * createBuilding
-     * @param bName
-     * @param bTotalApartments
-     * @param bAddress
+     * createBuilding add a new building to the real state.
+     * @param bName represents the name of the building.
+     * @param bTotalApartments represents the total apartments of the building.
+     * @param bAddress represents the building's adress.
      * @return msg
      */
     public String createBuilding(String bName, int bTotalApartments, String bAddress) {
@@ -45,9 +45,9 @@ public class Controller {
     
 
     /**
-     * checkBuldingNameAvailability
-     * @param bName
-     * @return isAvailable
+     * checkBuldingNameAvailability check if a building name doesn't exists on the system.
+     * @param bName represents the name of the building.
+     * @return isAvailable represents the building's name availability.
      */
     public boolean checkBuldingNameAvailability(String bName) {
         boolean isAvailable = true;
@@ -62,9 +62,9 @@ public class Controller {
     }
     
     /**
-     * getBuildingPosition
-     * @param bName
-     * @return pos
+     * getBuildingPosition get the position of a specific building.
+     * @param bName represents the name of the building.
+     * @return pos represents the position of the building.
      */
     public int getBuildingPosition(String bName) {
         int pos = -1;
@@ -79,9 +79,9 @@ public class Controller {
     }
     
     /**
-     * getTotalApartmentsOfABuilding
-     * @param pos
-     * @return numApartments
+     * getTotalApartmentsOfABuilding get the total number of apartments of an specific building.
+     * @param pos represents the position of a specific building.
+     * @return numApartments represents the total number of apartments of a building.
      */
     public int getTotalApartmentsOfABuilding(int pos) {
         int numApartments = theBuildings.get(pos).getTotalApartments();
@@ -90,9 +90,9 @@ public class Controller {
     }
     
     /**
-     * getApartmentNumberAvailability
-     * @param aIdNumber
-     * @return isAvailable
+     * getApartmentNumberAvailability check if an apartment id number is available.
+     * @param aIdNumber represents the id number of an apartment.
+     * @return isAvailable represents the response of an apartment id number availability.
      */
     public boolean getApartmentNumberAvailability(String aIdNumber) {
         boolean isAvailable = building.checkApartmentNumberAvailability(aIdNumber);
@@ -101,15 +101,15 @@ public class Controller {
     }
     
     /**
-     * registerApartment
-     * @param pos
-     * @param aIdNumber
-     * @param aTotalRooms
-     * @param aTotalBaths
-     * @param aBalcony
-     * @param aRentValue
-     * @param aPlace
-     * @return msg
+     * registerApartment sends the info of a new apartment to register on the building class.
+     * @param pos represents a building's position.
+     * @param aIdNumber represents the id number of the apartment.
+     * @param aTotalRooms represents the total rooms of the apartment.
+     * @param aTotalBaths represents the total baths of the apartment.
+     * @param aBalcony represents the balcony option of the apartment.
+     * @param aRentValue represents the monthly rent value of the apartment.
+     * @param aPlace the name of the building to which the apartment belongs.
+     * @return msg represents the response.
      */
     public String registerApartment(int pos, String aIdNumber, int aTotalRooms, int aTotalBaths, boolean aBalcony, double aRentValue, String aPlace) {
         String msg = "";
@@ -124,8 +124,8 @@ public class Controller {
     }    
     
     /**
-     * showResponsesOption
-     * @return YesNo
+     * showResponsesOption show a list of options(yes and no).
+     * @return YesNo represents the options.
      */
     public String showResponsesOption() {
         
@@ -137,11 +137,11 @@ public class Controller {
     }
     
     /**
-     * validateOptionRange
-     * @param minRange
-     * @param maxRange
-     * @param optionChosen
-     * @return isOnRange
+     * validateOptionRange validate if an option entered is between a given range.
+     * @param minRange represents the minimum value of the range.
+     * @param maxRange represents the maximun value of the range.
+     * @param optionChosen represents the option chosen.
+     * @return isOnRange represents the response.
      */
     public boolean validateOptionRange(int minRange, int maxRange, int optionChosen) {
         boolean isOnRange = false;
@@ -154,9 +154,9 @@ public class Controller {
     }
     
     /**
-     * setApartmentBalcony
-     * @param optBalcony
-     * @return hasBalcony
+     * setApartmentBalcony set the balcony availability.
+     * @param optBalcony represents the balcony option.
+     * @return hasBalcony represents the response.
      */
     public boolean setApartmentBalcony(int optBalcony) {
         boolean hasBalcony = false;
@@ -169,15 +169,15 @@ public class Controller {
     }
     
     /**
-     * registerOwner
-     * @param oAccountNumber
-     * @param oBankName
-     * @param pIdType
-     * @param pIdNumber
-     * @param pFullname
-     * @param pPhoneNumber
-     * @param pPhoneType
-     * @return msg
+     * registerOwner add a new owner to the real state.
+     * @param oAccountNumber represents the owner's account number.
+     * @param oBankName represents the owner's account number.
+     * @param pIdType represents the owner's id type.
+     * @param pIdNumber represents the owner's id number.
+     * @param pFullname represents the owner's fullname.
+     * @param pPhoneNumber represents the owner's phone number.
+     * @param pPhoneType represents the owner's phone type.
+     * @return msg represents the owner addition message.
      */
     public String registerOwner(String oAccountNumber, String oBankName, String pIdType, String pIdNumber, String pFullname, String pPhoneNumber, String pPhoneType) {
         theOwners.add(new Owner(oAccountNumber, oBankName, pIdType, pIdNumber, pFullname, pPhoneNumber, pPhoneType));
@@ -188,13 +188,13 @@ public class Controller {
     }
     
     /**
-     * registerTenant
-     * @param pIdType
-     * @param pIdNumber
-     * @param pFullname
-     * @param pPhoneNumber
-     * @param pPhoneType
-     * @return msg
+     * registerTenant add a new tenant to the real state.
+     * @param pIdType represents the tenant's id type.
+     * @param pIdNumber represents the tenant's id number.
+     * @param pFullname represents the tenant's fullname.
+     * @param pPhoneNumber represents the tenant's phone number.
+     * @param pPhoneType represents the tenant's phone type.
+     * @return msg represents the tenant addition message.
      */
     public String registerTenant(String pIdType, String pIdNumber, String pFullname, String pPhoneNumber, String pPhoneType) {
         theTenants.add(new Tenant(pIdType, pIdNumber, pFullname, pPhoneNumber, pPhoneType));
@@ -205,8 +205,8 @@ public class Controller {
     }
     
     /**
-     * showOptionIdType
-     * @return optionsId
+     * showOptionIdType show a list of id type options.
+     * @return optionsId represents the options list.
      */
     public String showOptionIdType() {
         String optionsId = 
@@ -218,9 +218,9 @@ public class Controller {
     }
     
     /**
-     * setOptionIdType
-     * @param optId
-     * @return pIdType
+     * setOptionIdType assign the id type to the person.
+     * @param optId represents the option given by the user.
+     * @return pIdType represents the id type of the person.
      */
     public String setOptionIdType(int optId) {
         String pIdType = "CITIZENSHIP";
@@ -241,10 +241,10 @@ public class Controller {
     }
 
     /**
-     * checkIdAvailability
-     * @param typePerson
-     * @param pIdNumber
-     * @return isAvailable
+     * checkIdAvailability check if an id if available.
+     * @param typePerson represents the type of person (tenant or owner).
+     * @param pIdNumber represents the person id number.
+     * @return isAvailable represents the response.
      */
     public boolean checkIdAvailability(int typePerson, String pIdNumber) {
         boolean isAvailable = true;
@@ -272,10 +272,10 @@ public class Controller {
  
 
     /**
-     * searchPersonById
-     * @param typePerson
-     * @param pIdNumber
-     * @return pos
+     * searchPersonById search a person on the arraylist.
+     * @param typePerson represents the type of person (tenant or owner).
+     * @param pIdNumber represents the person id number.
+     * @return pos represents the position of the person.
      */
     public int searchPersonById(int typePerson, String pIdNumber) {
         int pos = -1;
@@ -302,10 +302,10 @@ public class Controller {
     }    
     
     /**
-     * checkPersonExistence
-     * @param typePerson
-     * @param pIdNumber
-     * @return hasExistence
+     * checkPersonExistence check if a person is on the arraylist.
+     * @param typePerson represents the type of person.
+     * @param pIdNumber represents the person's id number.
+     * @return hasExistence represents the response.
      */
     public boolean checkPersonExistence(int typePerson, String pIdNumber) {
         boolean hasExistence = false;
@@ -332,8 +332,8 @@ public class Controller {
     }
  
     /**
-     * showOptionPhoneType
-     * @return optionsPhone
+     * showOptionPhoneType show a list of phone type options.
+     * @return optionsPhone represents the options list.
      */
     public String showOptionPhoneType() {
         String optionsPhone = 
@@ -347,9 +347,9 @@ public class Controller {
     }
     
     /**
-     * setOptionPhoneType
-     * @param optPhone
-     * @return pPhoneType
+     * setOptionPhoneType assign a phone type to the person.
+     * @param optPhone represents the option chosen.
+     * @return pPhoneType represents the persons' phone type.
      */
     public String setOptionPhoneType(int optPhone) {
         String pPhoneType = "OTHER";
@@ -380,14 +380,14 @@ public class Controller {
     }
     
     /**
-     * checkIntegerValidation
-     * @param bTotalApartments
-     * @return isValid
+     * checkIntegerValidation validate an integer.
+     * @param anyVariable represents the result of the validation on the main.
+     * @return isValid represents the response.
      */
-    public boolean checkIntegerValidation(int bTotalApartments) {
+    public boolean checkIntegerValidation(int anyVariable) {
         boolean isValid = true;
         
-        if(bTotalApartments == -1) {
+        if(anyVariable == -1) {
             isValid = false;
         }
         
@@ -395,7 +395,7 @@ public class Controller {
     }
     
     /**
-     * showBuilding
+     * showBuilding 
      * @return msg_buildings
      */
     public String showBuilding() {
@@ -409,8 +409,8 @@ public class Controller {
     }
     
     /**
-     * getAvailableApartmentsToSet
-     * @return msg_apartments
+     * getAvailableApartmentsToSet show the available apartments to set.
+     * @return msg_apartments represents the list.
      */
     public String getAvailableApartmentsToSet() {
         String msg_apartments = building.showAvailableApartmentsToSet();
@@ -419,8 +419,8 @@ public class Controller {
     }
 
     /**
-     * getAvailableApartmentsToRent
-     * @return msg_apartments
+     * getAvailableApartmentsToRent show the available apartments to rent.
+     * @return msg_apartments represents the list.
      */    
     public String getAvailableApartmentsToRent() {
         String msg_apartments = building.showAvailableApartmentsToRent();
@@ -429,9 +429,9 @@ public class Controller {
     }
     
     /**
-     * getPositionApartmentToSet
-     * @param aIdNumber
-     * @return pos
+     * getPositionApartmentToSet get the position of the apartment to set.
+     * @param aIdNumber represents the apartment's id number.
+     * @return pos represents the position.
      */
     public int getPositionApartmentToSet(String aIdNumber) {
         int pos = building.getApartmentPosToSet(aIdNumber);
@@ -440,8 +440,8 @@ public class Controller {
     }
     
     /**
-     * setRentsPaymentToOwner
-     * @param pos
+     * setRentsPaymentToOwner sum the rent concepts of all the apartments of an owner.
+     * @param pos represents the owner position.
      */
     public void setRentsPaymentToOwner(int pos) {
         double current = theOwners.get(pos).getTotalRents();
@@ -453,8 +453,8 @@ public class Controller {
     }
     
     /**
-     * setApartmentAvailability
-     * @param pos
+     * setApartmentAvailability set the apartment availability.
+     * @param pos represents the apartment position.
      */    
     public void setApartmentAvailability(int pos) {
         building.setApartmentAvailabilityWithPosition(pos);
@@ -462,8 +462,8 @@ public class Controller {
     }
     
     /**
-     * setApartmentRented
-     * @param pos
+     * setApartmentRented set the apartment rented availability.
+     * @param pos represents the apartment position.
      */      
     public void setApartmentRented(int pos) {
         building.setApartmentRentedWithPosition(pos);
@@ -471,8 +471,8 @@ public class Controller {
  
     /**
      * setOwnerApartment
-     * @param aIdNumber
-     * @param pIdNumber
+     * @param aIdNumber represents the apartment id number.
+     * @param pIdNumber represents the person id number.
      */
     public void setOwnerApartment(String aIdNumber, String pIdNumber) {
         for(int i = 0; i < theOwners.size(); i++) {
@@ -483,9 +483,9 @@ public class Controller {
     }
     
     /**
-     * getOwnerMonthlyRentPayment
-     * @param pos
-     * @return totalMoney
+     * getOwnerMonthlyRentPayment calculate the monthly concepts of total rents by an owner.
+     * @param pos represent the owner position.
+     * @return totalMoney represents the total monthly value of rents.
      */
     public double getOwnerMonthlyRentPayment(int pos) {
         double totalMoney = theOwners.get(pos).getTotalRents() - (theOwners.get(pos).getTotalRents()*0.1);
@@ -494,9 +494,9 @@ public class Controller {
     }
     
     /**
-     * getCountAvailableApartmentsToSet
-     * @param bName
-     * @return count
+     * getCountAvailableApartmentsToSet count all the available apartment to set.
+     * @param bName represents the name of the building.
+     * @return count represents the total apartments.
      */
     public int getCountAvailableApartmentsToSet(String bName) {
         int count = building.countAvailableApartmentsToSet(bName);
@@ -505,9 +505,9 @@ public class Controller {
     }
     
     /**
-     * getCountAvailableApartmentsToRent
-     * @param bName
-     * @return count
+     * getCountAvailableApartmentsToRent count all the available apartment to rent.
+     * @param bName represents the name of the building.
+     * @return count represents the total apartments.
      */
     public int getCountAvailableApartmentsToRent(String bName) {
         int count = building.countAvailableApartmentsToRent(bName);
@@ -516,8 +516,8 @@ public class Controller {
     }
     
     /**
-     * setTenantRents
-     * @param pIdNumber
+     * setTenantRents set all the tenant rents.
+     * @param pIdNumber represents the tenant id number.
      */
     public void setTenantRents(String pIdNumber) {
         int current = 0;
@@ -532,9 +532,9 @@ public class Controller {
     }
     
     /**
-     * getTotalRentsOfTenant
-     * @param pos
-     * @return totalRents
+     * getTotalRentsOfTenant get total rentend apartments by a tenant.
+     * @param pos represents the tenant position.
+     * @return totalRents represents the quantity of rents.
      */
     public int getTotalRentsOfTenant(int pos) {
         int totalRents = theTenants.get(pos).getNumApt();
@@ -543,9 +543,9 @@ public class Controller {
     }
     
     /**
-     * getMonthlyValueRentedApartments
-     * @param bName
-     * @return totalMoney
+     * getMonthlyValueRentedApartments get the total amount of all the rented apartments.
+     * @param bName represents the name of the building.
+     * @return totalMoney represents the amount.
      */
     public double getMonthlyValueRentedApartments(String bName) {
         double totalMoney = building.calculateMonthlyValueRentedApartments(bName);
@@ -554,9 +554,9 @@ public class Controller {
     }
     
     /**
-     * getApartmentAvailability
-     * @param aIdNumber
-     * @return isAvailable
+     * getApartmentAvailability check if an apartment is available.
+     * @param aIdNumber represents the apartment id number.
+     * @return isAvailable represents the response.
      */
     public boolean getApartmentAvailability(String aIdNumber) {
         boolean isAvailable = building.checkApartmentAvailability(aIdNumber);
